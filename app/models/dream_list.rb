@@ -11,4 +11,8 @@ class DreamList < ApplicationRecord
   def get_image
    (image.attached?) ? image : "dummy.png"
   end
+
+  def self.search(search_word)
+   DreamList.where(['category LIKE ?', "#{search_word}"]) # 完全一致のカテゴリー
+  end
 end
