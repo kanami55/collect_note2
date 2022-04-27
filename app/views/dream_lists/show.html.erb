@@ -1,2 +1,12 @@
-<h1>DreamLists#show</h1>
-<p>Find me in app/views/dream_lists/show.html.erb</p>
+<div class="container mt-4 mb-4">
+  <div class="col-md-6 mx-auto">
+    <%= image_tag @dream_list.get_image, size: "400x300" %>
+    <p><%= @dream_list.dream %></p>
+    <p><%= @dream_list.period %></p>
+    <p><%= @dream_list.detail %></p>
+    <p>
+      <i class="fas fa-tag"></i>
+      <%= link_to @dream_list.category, search_dream_list_path(keyword: @dream_list.category) %>
+    </p>
+  </div>
+</div>
