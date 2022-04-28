@@ -6,4 +6,5 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true # 一意性制約
   # 関連付け
   has_many :dream_lists
+  has_many :plans
 end
