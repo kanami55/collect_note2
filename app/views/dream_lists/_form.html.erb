@@ -1,6 +1,6 @@
 <div class="row mt-3">
   <div class="col-md-4">
-    <%= form.label "画像:" %>
+    <%= form.label :image, "画像 :", class: "font-weight-bold" %>
   </div>
   <div class="col-4">
     <%= form.file_field :image, accept: "image/*" %>
@@ -8,7 +8,7 @@
 </div>
 <div class="row mt-3">
   <div class="col-md-4">
-    <%= form.label "夢:" %>
+    <%= form.label :dream, "夢 :", class: "font-weight-bold" %>
   </div>
   <div class="col-4">
     <%= form.text_field :dream %>
@@ -16,7 +16,7 @@
 </div>
 <div class="row mt-3">
   <div class="col-md-4">
-    <%= form.label "達成日:" %>
+    <%= form.label :period, "達成日 :", class: "font-weight-bold" %>
   </div>
   <div class="col-4">
     <%= form.text_field :period %>
@@ -24,17 +24,17 @@
 </div>
 <div class="row mt-3">
   <div class="col-md-4">
-    <%= form.label "フリー(意気込み):" %>
+    <%= form.label :detail, "フリー(意気込み) :", class: "font-weight-bold" %>
   </div>
   <div class="col-4">
-    <%= form.text_area :detail %>
+    <%= form.text_area :detail, placeholder: "" %>
   </div>
 </div>
 <div class="row mt-3">
   <div class="col-md-4">
-    <%= form.label "カテゴリー:" %>
+    <%= form.label :category, "カテゴリー :", class: "font-weight-bold" %>
   </div>
   <div class="col-4">
-    <%= form.text_field :category %>
+    <%= form.text_field :category, placeholder: "" %>
   </div>
 </div>
