@@ -1,12 +1,14 @@
 class SessionsController < ApplicationController
+  skip_before_action :login_required
+
   def new
 
   end
 
   def create
-    user = User.find_by(email: sessions_params[:email]) # 該当するユーザーを探
+    user = User.find_by(email: sessions_params[:email]) # 該当するユーザーを探す
     if user&.authenticate(sessions_params[:password])
-      sessions[:user_id] = user.id
+      session[:user_id] = user.id
       redirect_to dream_lists_path
       flash[:notice] = "ログインしました。"
     else
