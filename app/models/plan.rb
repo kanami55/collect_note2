@@ -1,6 +1,6 @@
 class Plan < ApplicationRecord
-  belongs_to :user, dependent: :destroy
+  belongs_to :user
 
   validates :title, presence: true
-  validates :start_date, presence: true
+  validates :start_time, presence: true
 end

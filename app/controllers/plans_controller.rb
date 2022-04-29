@@ -1,5 +1,5 @@
 class PlansController < ApplicationController
-
+  skip_before_action :login_required
   def create
     @plan = current_user.plans.new(plan_params)
     if @plan.save
@@ -33,16 +33,16 @@ class PlansController < ApplicationController
     end
   end
 
-  def destory
+  def destroy
     @plan = current_user.plans.find(params[:id])
     @plan.destroy
-    flash[:notice] = "削除しました。"
     redirect_to plans_path
+    flash[:notice] = "予定を１つ削除しました。"
   end
 
   private
 
   def plan_params
-    params.require(:plan).permit(:title, :content, :start_time, :user_id)
+    params.require(:plan).permit(:title, :content, :start_time)
   end
 end
