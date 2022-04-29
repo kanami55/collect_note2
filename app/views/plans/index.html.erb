@@ -7,11 +7,13 @@
       　<%= form.submit "登録" %>
       <% end %>
     </div>
-    <div class="col-md-8">
+    <div class="col-md-9">
       <%= month_calendar events: @plans do |date, plans| %>
         <%= date.day %>
         <% plans.each do |plan| %>
-          <%= plan.title %>
+          <p class="plan_title">
+            <%= plan.title %>
+          </p>
         <% end %>
       <% end %>
     </div>
