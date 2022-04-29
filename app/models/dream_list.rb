@@ -5,7 +5,7 @@ class DreamList < ApplicationRecord
   validates :period, presence: true
   validates :category, presence: true
   # 関連付け
-  belongs_to :user, dependent: :destroy
+  belongs_to :user
 
   # ActiveStrage
   has_one_attached :image

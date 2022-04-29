@@ -38,7 +38,7 @@ class DreamListsController < ApplicationController
   def destroy
     @dream_list = current_user.dream_lists.find(params[:id])
     @dream_list.destroy
-    redirect_to dream_lists_psth
+    redirect_to dream_lists_path
     flash[:notice] = "１つ夢を削除しました。"
   end
 

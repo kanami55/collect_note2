@@ -1,0 +1,51 @@
+<div class="container mt-4 mb-4">
+  <h2>今後のスケジュール</h2>
+  <div class="row">
+    <div class="col-md-3">
+      <%= form_with model: @plan, local: true do |form| %>
+        <%= render "plans/form", form: form %>
+      　<%= form.submit "登録" %>
+      <% end %>
+    </div>
+    <div class="col-md-9">
+      <%= month_calendar events: @plans do |date, plans| %>
+        <%= date.day %>
+        <% plans.each do |plan| %>
+          <p class="plan_title">
+            <%= plan.title %>
+          </p>
+        <% end %>
+      <% end %>
+    </div>
+    </div>
+    <table class="table">
+      <thead class="thead-light">
+        <tr>
+          <th style="width: 10%">日付</th>
+          <th style="width: 20%">スケジュール</th>
+          <th style="width: 40%">内容</th>
+          <th style="width: 5%"></th>
+          <th style="width: 5%"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @plans.each do |plan| %>
+          <tr>
+            <td><%= plan.start_time.strftime("%m-%d") %></td>
+            <td><%= plan.title %></td>
+            <td><%= plan.content %></td>
+            <td>
+              <%= link_to  edit_plan_path(plan) do %>
+                <i class="fas fa-edit"></i>
+              <% end %>
+            </td>
+            <td>
+              <%= link_to plan_path(plan), method: :delete, data: { confirm: '削除しますか？' } do %>
+                <i class="fas fa-trash-alt"></i>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+</div>

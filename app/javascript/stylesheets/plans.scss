@@ -1,0 +1,42 @@
+.simple-calendar {
+  table {
+    box-sizing: border-box;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  th {
+    text-align: left;
+    padding: 8px;
+    background-color: #ffffff;
+  }
+
+  td {
+    width: 80px;
+    padding: 4px;
+    vertical-align: top;
+  }
+
+  .day {
+    height: 80px;
+  }
+
+  .today {
+    background: #ffffc0;
+  }
+
+  .prev-month {
+    background: #dcdcdc;
+  }
+
+  .next-month {
+    background: #dcdcdc;
+  }
+}
+
+.plan_title {
+  font-size: 10px;
+  font-weight: bold;
+  color: #228b22;
+  margin-bottom: 0;
+}

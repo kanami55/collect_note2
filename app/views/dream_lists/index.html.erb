@@ -15,7 +15,7 @@
                 <%= link_to edit_dream_list_path(dream_list) do %>
                   <i class="fas fa-edit"></i>
                 <% end %>
-                <%= link_to dream_lists_path, method: :delete, data: { confirm: '削除しますか？' } do %>
+                <%= link_to dream_list_path(dream_list), method: :delete, data: { confirm: '削除しますか？' } do %>
                   <i class="fas fa-eraser"></i>
                 <% end %>
               </td>

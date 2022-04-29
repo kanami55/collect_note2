@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   resources :users
   root to: 'homes#top'
   resources :dream_lists
+  resources :plans
   get '/search_dream_list' => 'dream_lists#search_dream_list' # カテゴリー検索
 end
