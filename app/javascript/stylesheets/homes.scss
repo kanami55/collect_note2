@@ -1,14 +1,7 @@
-.top_back {
-  height: 100vh;
-  background-image: url("../image/top_back.jpg");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  position: relative;
-}
-
-/*.top_title {
+.top_main {
   position: absolute;
-  top: 40%;
-  left: 20%;
-}*/
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+}

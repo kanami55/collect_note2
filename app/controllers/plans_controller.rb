@@ -1,5 +1,5 @@
 class PlansController < ApplicationController
-  skip_before_action :login_required
+
   def create
     @plan = current_user.plans.new(plan_params)
     if @plan.save
