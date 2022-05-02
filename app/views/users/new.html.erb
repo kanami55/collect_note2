@@ -1,6 +1,7 @@
 <div class="container mt-4 mb-4">
   <div class="card mx-auto col-lg-8 shadow p-3 bg-white">
     <h2>アカウント新規登録</h2>
+      <%= render "users/error_message", user: @user %>
       <%= form_with model: @user, local: true do |form| %>
         <div class="ml-3 mt-3">
           <%= render "users/form", form: form %>
