@@ -9,7 +9,8 @@
       </div>
       <div class="col-md-2">
         <p>カテゴリー</p>
-        <li><%= link_to dream_list.category, search_dream_list_path(keyword: dream_list.category) %></li>
+        <i class="fas fa-tag"></i>
+      　<%= link_to dream_list.category, search_dream_list_path(keyword: dream_list.category) %>
       </div>
     <% end %>
   </div>

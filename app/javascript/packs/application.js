@@ -14,6 +14,7 @@ import "../stylesheets/application"
 import '@fortawesome/fontawesome-free/js/all'
 import "../stylesheets/homes"
 import "../stylesheets/plans"
+import "../stylesheets/dream_lists"
 
 
 

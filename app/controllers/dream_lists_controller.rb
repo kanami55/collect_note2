@@ -14,7 +14,7 @@ class DreamListsController < ApplicationController
   end
 
   def index
-    @dream_lists = current_user.dream_lists
+    @dream_lists = current_user.dream_lists.page(params[:page])
   end
 
   def show

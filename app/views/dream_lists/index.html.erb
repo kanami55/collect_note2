@@ -19,7 +19,41 @@
             <tr>
               <td><%= check_box_tag '', '' %></td>
               <td><%= link_to dream_list.dream, dream_list_path(dream_list.id) %></td>
-              <td><%= dream_list.period %></td>
+              <td>
+                <%= dream_list.countdown %>
+
+                <p id="CountDownTime" ></p>
+                <script>
+                function showCountdown() {
+                 // 現在日時を数値に変換
+                 var nowDate = new Date();
+                 var dnumNow = nowDate.getTime();
+
+                 // 指定日時を数値に変換
+                 var inputYear = document.getElementById("countdown").value;
+                 var inputMonth = document.getElementById("countdown").value - 1;
+                 var inputDate = document.getElementById("countdown").value;
+                 var dnumTarget = targetDate.getTime();
+
+                 // 引き算して残日数を計算
+                 var diffMSec = dnumTarget - dnumNow;
+                 var diffDays = diffMSec / ( 1000 * 60 * 60 * 24 );
+                 var showDays = Math.ceil( diffDays ); // 小数点以下を切り上げる
+
+                 // 表示
+                 var Msg;
+                 if( showDays >= 0 ) {
+                    Msg = "あと " + showDays + "日";
+                 }
+                 else {
+                    Msg = "達成日は " + (showDays * -1) + "日前に過ぎました。";
+                 }
+
+                 document.getElementById("CountDownTime").innerHTML = Msg;
+                 document.getElementById("countdown.id").value = targetDate;
+                }
+                </script>
+              </td>
               <td>
                 <%= link_to edit_dream_list_path(dream_list) do %>
                   <i class="fas fa-edit"></i>
@@ -40,5 +74,8 @@
             <%= link_to dream_list.category, search_dream_list_path(keyword: dream_list.category) %>
           <% end %>
       </div>
+    </div>
+    <div class="mx-auto">
+      <%= paginate @dream_lists %>
     </div>
 </div>

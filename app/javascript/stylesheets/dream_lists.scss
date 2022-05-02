@@ -1,0 +1,19 @@
+.dream_list_image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  /*@media screen and (min-width: 400px) {
+    height: 186px;
+  }
+  @media screen and (min-width: 570px) {
+    height: 200px;
+  }
+  @media screen and (min-width: 992px) {
+    height: 300px;
+  }*/
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}

@@ -12,7 +12,7 @@ class PlansController < ApplicationController
 
   def index
     @plan = Plan.new
-    @plans = current_user.plans
+    @plans = current_user.plans.page(params[:page])
   end
 
   def show
