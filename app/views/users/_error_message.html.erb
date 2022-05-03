@@ -1,12 +1,12 @@
-<% if user.errors.any? %>
-  <p class="text-danger">
+<div class="text-danger">
+  <% if user.errors.any? %>
     <%= user.errors.count %>件のエラーが発生しました
-  </p>
-    <ul>
-      <% user.errors.full_messages.each do |message| %>
-        <li class="text-danger ml-3">
-          <%= message %>
-        </li>
-      <% end %>
-    </ul>
-<% end %>
+      <ul>
+        <% user.errors.full_messages.each do |message| %>
+          <li class="ml-3">
+            <%= message %>
+          </li>
+        <% end %>
+      </ul>
+  <% end %>
+</div>

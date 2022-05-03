@@ -2,6 +2,7 @@
   <h2 class="text-white">今後のスケジュール</h2>
   <div class="row">
     <div class="col-md-3 mt-3">
+      <%= render "plans/error_message", plan: @plan %>
       <%= form_with model: @plan, local: true do |form| %>
         <%= render "plans/form", form: form %>
       　<%= form.submit "登録", class: "btn btn-secondary btn-sm" %>
@@ -31,7 +32,7 @@
       <tbody>
         <% @plans.each do |plan| %>
           <tr>
-            <td><%= plan.start_time %></td>
+            <td><%= plan.start_time.strftime("%Y-%m-%d %H:%M") %></td>
             <td><%= plan.title %></td>
             <td><%= plan.content %></td>
             <td>
@@ -48,5 +49,5 @@
         <% end %>
       </tbody>
     </table>
-    <%= paginate @plans, class: "text-white" %>
+    <%#= paginate @plans, class: "text-white" %>
 </div>

@@ -1,18 +1,15 @@
 class PlansController < ApplicationController
-
   def create
     @plan = current_user.plans.new(plan_params)
     if @plan.save
       redirect_to plans_path
       flash[:notice] = "登録しました。"
-    else
-      render :new
     end
   end
 
   def index
     @plan = Plan.new
-    @plans = current_user.plans.page(params[:page])
+    @plans = current_user.plans
   end
 
   def show
