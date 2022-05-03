@@ -1,32 +1,32 @@
 <div class="row mt-3">
   <div class="col-md-4">
-    <%= form.label "ユーザー名:" %>
+    <%= form.label "ユーザー名:",  class: "form_label" %>
   </div>
   <div class="col-4">
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class: "form-control-sm" %>
   </div>
 </div>
 <div class="row mt-3">
   <div class="col-md-4">
-    <%= form.label "メールアドレス:" %>
+    <%= form.label "メールアドレス:",  class: "form_label" %>
   </div>
   <div class="col-4">
-    <%= form.text_field :email %>
+    <%= form.text_field :email, class: "form-control-sm" %>
   </div>
 </div>
 <div class="row mt-3">
   <div class="col-md-4">
-    <%= form.label "パスワード:" %>
+    <%= form.label "パスワード:", class: "form_label" %>
   </div>
   <div class="col-4">
-    <%= form.text_field :password %>
+    <%= form.text_field :password, class: "form-control-sm" %>
   </div>
 </div>
 <div class="row mt-3">
   <div class="col-md-4">
-    <%= form.label "パスワード(確認用):" %>
+    <%= form.label "パスワード(確認用):",  class: "form_label" %>
   </div>
   <div class="col-4">
-    <%= form.text_field :password_confirmation %>
+    <%= form.text_field :password_confirmation, class: "form-control-sm" %>
   </div>
 </div>

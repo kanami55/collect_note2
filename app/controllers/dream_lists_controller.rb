@@ -14,7 +14,7 @@ class DreamListsController < ApplicationController
   end
 
   def index
-    @dream_lists = current_user.dream_lists
+    @dream_lists = current_user.dream_lists.page(params[:page])
   end
 
   def show
@@ -50,6 +50,6 @@ class DreamListsController < ApplicationController
   private
 
   def dream_list_params
-    params.require(:dream_list).permit(:dream, :period, :detail, :image, :category)
+    params.require(:dream_list).permit(:dream, :period, :detail, :image, :category, :countdown)
   end
 end

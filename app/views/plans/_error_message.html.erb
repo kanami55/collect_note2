@@ -1,0 +1,12 @@
+<div class="text-white">
+  <% if plan.errors.any? %>
+    <%= plan.errors.count %>件のエラーが発生しました
+      <ul>
+        <% plan.errors.full_messages.each do |message| %>
+          <li class="ml-3">
+            <%= message %>
+          </li>
+        <% end %>
+      </ul>
+  <% end %>
+</div>

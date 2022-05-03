@@ -1,13 +1,14 @@
 <div class="container mt-4 mb-4">
-  <p><strong>今後のスケジュール</strong></p>
+  <h2 class="text-white">今後のスケジュール</h2>
   <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-3 mt-3">
+      <%= render "plans/error_message", plan: @plan %>
       <%= form_with model: @plan, local: true do |form| %>
         <%= render "plans/form", form: form %>
-      　<%= form.submit "登録" %>
+      　<%= form.submit "登録", class: "btn btn-secondary btn-sm" %>
       <% end %>
     </div>
-    <div class="col-md-9">
+    <div class="col-md-9 mt-3">
       <%= month_calendar events: @plans do |date, plans| %>
         <%= date.day %>
         <% plans.each do |plan| %>
@@ -18,20 +19,20 @@
       <% end %>
     </div>
     </div>
-    <table class="table">
+    <table class="table text-white">
       <thead class="thead-light">
         <tr>
-          <th style="width: 10%">日付</th>
-          <th style="width: 20%">スケジュール</th>
-          <th style="width: 40%">内容</th>
-          <th style="width: 5%"></th>
-          <th style="width: 5%"></th>
+          <th class="text-body", style="width: 20%">日付</th>
+          <th class="text-body", style="width: 20%">スケジュール</th>
+          <th class="text-body", style="width: 36%">内容</th>
+          <th class="text-body", style="width: 2%"></th>
+          <th class="text-body", style="width: 2%"></th>
         </tr>
       </thead>
       <tbody>
         <% @plans.each do |plan| %>
           <tr>
-            <td><%= plan.start_time.strftime("%m-%d") %></td>
+            <td><%= plan.start_time.strftime("%Y-%m-%d %H:%M") %></td>
             <td><%= plan.title %></td>
             <td><%= plan.content %></td>
             <td>
@@ -48,4 +49,5 @@
         <% end %>
       </tbody>
     </table>
+    <%#= paginate @plans, class: "text-white" %>
 </div>
