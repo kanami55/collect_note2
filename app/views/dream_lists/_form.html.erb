@@ -19,10 +19,7 @@
     <%= form.label :countdown , "達成日 :", class: "form_label" %>
   </div>
   <div class="col-md-4">
-    <%= form.datetime_field :countdown, id: "CountDownTimes" %>
-      <!--<input type="text" id="userYear" >年
-      <input type="text" id="userMonth">月
-      <input type="text" id="userDate" >日-->
+    <%= form.datetime_select :countdown, {date_separator: true}, {class: 'time-box'} %>
   </div>
 </div>
 <div class="row mt-3">
