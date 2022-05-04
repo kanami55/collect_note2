@@ -13,12 +13,22 @@ RSpec.describe User, type: :model do
     end
 
     context '新規登録が失敗したとき' do
-      it "nameが空では登録出来ない"
+      it "nameが空では登録出来ない" do
         @user.name = ''
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Nameを入力してください")
+      end
+      it "emailが空では登録出来ない" do
+        @user.email = ''
         @user.valid?
         expect(@user.errors.full_messages).to include("Emailを入力してください")
       end
       it "emailが重複していたら登録出来ない" do
+        @user.save
+        another_email = FactoryBot.build(:user)
+        another_email.email = @user.email
+        another_email.valid?
+        expect(another_email.errors.full_messages).to include("Emailはすでに存在します")
       end
       it "passwordが空では登録出来ない" do
         @user.password = ''
