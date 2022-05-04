@@ -1,7 +1,8 @@
 class DreamList < ApplicationRecord
+  include ActiveRecord::AttributeAssignment
   # 空でないこと
   validates :dream, presence: true
-  validates :countdown, presence: true
+  validates :period, presence: true
   validates :category, presence: true
   # 関連付け
   belongs_to :user
@@ -10,7 +11,7 @@ class DreamList < ApplicationRecord
   has_one_attached :image
 
   def get_image
-    (image.attached?) ? image : "dummy.png"
+    (image.attached?) ? image : "dummy_image.jpg"
   end
 
   def self.search(search_word)

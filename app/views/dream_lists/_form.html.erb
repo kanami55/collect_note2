@@ -16,10 +16,10 @@
 </div>
 <div class="row mt-3">
   <div class="col-md-4">
-    <%= form.label :countdown , "達成日 :", class: "form_label" %>
+    <%= form.label :period , "達成日 :", class: "form_label" %>
   </div>
   <div class="col-md-4">
-    <%= form.datetime_field :countdown, value: Time.current.strftime('%Y-%m-%dT00:00:00') %>
+    <%= form.date_select(:period, start_year: 2022, date_separator: '/') %>
       <!--<input type="text" id="userYear" >年
       <input type="text" id="userMonth">月
       <input type="text" id="userDate" >日-->
