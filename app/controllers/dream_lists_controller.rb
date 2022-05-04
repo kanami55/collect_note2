@@ -4,7 +4,6 @@ class DreamListsController < ApplicationController
   end
 
   def create
-    @dream_list = current_user.dream_lists.new(params[:countdown])
     @dream_list = current_user.dream_lists.new(dream_list_params)
     if @dream_list.save
       redirect_to dream_lists_path
@@ -51,6 +50,6 @@ class DreamListsController < ApplicationController
   private
 
   def dream_list_params
-    params.require(:dream_list).permit(:dream, :detail, :image, :category, :countdown)
+    params.require(:dream_list).permit(:dream, :period, :detail, :image, :category)
   end
 end
