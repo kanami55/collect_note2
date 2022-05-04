@@ -20,7 +20,7 @@
               <td><%= check_box_tag '', '' %></td>
               <td><%= link_to dream_list.dream, dream_list_path(dream_list.id) %></td>
               <td>
-                <%= "#{dream_list.period.year}年#{dream_list.period.month}月#{dream_list.period.day}日" %>
+                <%= dream_list.period %>
               <td>
                 <%= link_to edit_dream_list_path(dream_list) do %>
                   <i class="fas fa-edit"></i>
