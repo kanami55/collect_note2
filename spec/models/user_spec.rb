@@ -13,13 +13,8 @@ RSpec.describe User, type: :model do
     end
 
     context '新規登録が失敗したとき' do
-      it "nameが空では登録出来ない" do
+      it "nameが空では登録出来ない"
         @user.name = ''
-        @user.valid?
-        expect(@user.errors.full_messages).to include("Nameを入力してください")
-      end
-      it "emailが空では登録出来ない" do
-        @user.email = ''
         @user.valid?
         expect(@user.errors.full_messages).to include("Emailを入力してください")
       end

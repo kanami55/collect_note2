@@ -1,7 +1,7 @@
 class DreamList < ApplicationRecord
   # 空でないこと
   validates :dream, presence: true
-  validates :period, presence: true
+  validates :countdown, presence: true
   validates :category, presence: true
   # 関連付け
   belongs_to :user

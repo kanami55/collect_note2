@@ -19,7 +19,7 @@
     <%= form.label :countdown , "達成日 :", class: "form_label" %>
   </div>
   <div class="col-md-4">
-    <%= form.datetime_field :countdown, id: "CountDownTimes" %>
+    <%= form.datetime_field :countdown, value: Time.current.strftime('%Y-%m-%dT00:00:00') %>
       <!--<input type="text" id="userYear" >年
       <input type="text" id="userMonth">月
       <input type="text" id="userDate" >日-->
