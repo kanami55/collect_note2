@@ -4,6 +4,7 @@ class DreamListsController < ApplicationController
   end
 
   def create
+    @dream_list = current_user.dream_lists.new(params[:countdown])
     @dream_list = current_user.dream_lists.new(dream_list_params)
     if @dream_list.save
       redirect_to dream_lists_path
