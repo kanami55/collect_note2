@@ -1,11 +1,11 @@
 <div class="container mt-4 mb-4">
-  <div class="card col-sm-8 mx-auto">
+  <div class="card col-sm-8 mx-auto p-0">
     <div>
       <%= image_tag @dream_list.get_image, class: "dream_list_image" %>
     </div>
     <div class="card-body text-body">
     <h3><%= link_to @dream_list.dream, dream_list_path(@dream_list.id), class: "text-body" %></h3>
-    <p><%= @dream_list.countdown %></p>
+    <p><%= @dream_list.period %></p>
     <div class="card-text text-body"><%= @dream_list.detail %></div>
     <div class="text-right">
       <i class="fas fa-caret-right"></i>

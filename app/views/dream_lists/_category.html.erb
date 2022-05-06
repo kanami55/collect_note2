@@ -1,7 +1,11 @@
 <div class="col-md-2 border-left ml-2">
   <p>カテゴリー</p>
     <% dream_lists.each do |dream_list| %>
-      <i class="fas fa-caret-right"></i>
-    <%= link_to dream_list.category, search_dream_list_path(keyword: dream_list.category) %>
-    <% end %>
+    <ul>
+      <li>
+        <i class="fas fa-caret-right"></i>
+        <%= link_to dream_list.category, search_dream_list_path(keyword: dream_list.category) %>
+        <% end %>
+      </li>
+    </ul>
 </div>
