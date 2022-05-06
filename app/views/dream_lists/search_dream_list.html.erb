@@ -1,17 +1,10 @@
 <div class="container mt-4 mb-4">
-  <div class="row mx-auto">
-    <% @dream_lists.each do |dream_list| %>
-      <div class="col-md-7 mt-2">
-        <div class="card-wrap d-flex">
-          <%= link_to dream_list.dream, dream_list_path(dream_list.id) %>
-          <%= link_to "編集", edit_dream_list_path(dream_list.id) %>
-        </div>
-      </div>
-      <div class="col-md-2">
-        <p>カテゴリー</p>
-        <i class="fas fa-caret-right"></i>
-      　<%= link_to dream_list.category, search_dream_list_path(keyword: dream_list.category) %>
-      </div>
-    <% end %>
+  <div class="text-right">
+    <%= link_to "+dream", new_dream_list_path, class: "btn btn-secondary btn-sm" %>
   </div>
+  <h2 class="text-white" >Many Dreams</h2>
+    <div class="row">
+      <%= render "dream_lists/index", dream_lists: @dream_lists %>
+      <%= render "dream_lists/category", dream_lists: @dream_lists %>
+    </div>
 </div>

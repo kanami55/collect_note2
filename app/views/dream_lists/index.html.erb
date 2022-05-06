@@ -2,45 +2,10 @@
   <div class="text-right">
     <%= link_to "+dream", new_dream_list_path, class: "btn btn-secondary btn-sm" %>
   </div>
-  <h2>Many Dreams</h2>
+  <h2 class="text-white" >Many Dreams</h2>
     <div class="row">
-      <div class="col-md-9">
-        <table class="table table-striped text-white">
-          <thead>
-            <tr>
-              <th></th>
-              <th>夢</th>
-              <th>達成日</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <% @dream_lists.each do |dream_list| %>
-            <tr>
-              <td><%= check_box_tag '', '' %></td>
-              <td><%= link_to dream_list.dream, dream_list_path(dream_list.id) %></td>
-              <td>
-                <%= dream_list.period %>
-              <td>
-                <%= link_to edit_dream_list_path(dream_list) do %>
-                  <i class="fas fa-edit"></i>
-                <% end %>
-                <%= link_to dream_list_path(dream_list), method: :delete, data: { confirm: '削除しますか？' } do %>
-                  <i class="fas fa-eraser"></i>
-                <% end %>
-              </td>
-            </tr>
-            <% end %>
-          </tbody>
-        </table>
-      </div>
-      <div class="col-md-2 border-left ml-2">
-        <p>カテゴリー</p>
-          <% @dream_lists.each do |dream_list| %>
-            <i class="fas fa-caret-right"></i>
-            <%= link_to dream_list.category, search_dream_list_path(keyword: dream_list.category) %>
-          <% end %>
-      </div>
+      <%= render "dream_lists/index", dream_lists: @dream_lists %>
+      <%= render "dream_lists/category", dream_lists: @dream_lists %>
     </div>
     <div class="mx-auto">
       <%= paginate @dream_lists %>
