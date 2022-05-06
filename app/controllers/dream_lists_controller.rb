@@ -1,4 +1,5 @@
 class DreamListsController < ApplicationController
+  skip_before_action :login_required
   require 'date'
   def new
     @dream_list = DreamList.new
@@ -56,7 +57,6 @@ class DreamListsController < ApplicationController
   end
 
   def period_get
-    date = params[:dream_list][:period]
-    Date.new date["period(1i)"].to_i,date["period(2i)"].to_i,pdate["period(3i)"].to_i
+    date = Date.new(params[:dream_list][:period])
   end
 end
