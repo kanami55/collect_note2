@@ -19,7 +19,7 @@ RSpec.describe DreamList, type: :model do
         expect(@dream_list.errors.full_messages).to include("Dreamを入力してください")
       end
       it "countdownが空では登録出来ない" do
-        @dream_list.countdown = ''
+        @dream_list.period = ''
         @dream_list.valid?
         expect(@dream_list.errors.full_messages).to include("Countdownを入力してください")
       end
