@@ -6,8 +6,6 @@ class DreamListsController < ApplicationController
   end
 
   def create
-    date = Date.new(params[:dream_list][:period])
-    date.strftime("%Y/%m/%d")
     @dream_list = current_user.dream_lists.new(dream_list_params)
     if @dream_list.save
       redirect_to dream_lists_path
@@ -35,6 +33,11 @@ class DreamListsController < ApplicationController
 
   def update
     @dream_list = current_user.dream_lists.find(params[:id])
+    @dream_list.period = Period.new(
+    params[:dream_list]["period(1i)"].to_i,
+    params[:dream_list]["period(2i)"].to_i,
+    params[:dream_list]["period(3i)"].to_i
+    )
     if @dream_list.update(dream_list_params)
       redirect_to dream_list_path(@dream_list.id)
       flash[:notice] = "更新に成功しました。"
