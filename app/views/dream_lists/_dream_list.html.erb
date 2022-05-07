@@ -1,0 +1,17 @@
+<% dream_lists.each do |dream_list| %>
+  <tr>
+    <td><%= check_box_tag '', '' %></td>
+    <td><%= link_to dream_list.dream, dream_list_path(dream_list.id) %></td>
+    <td><%= dream_list.period %><td>
+    <td>
+      <%= link_to edit_dream_list_path(dream_list), remote: true do %>
+        <i class="fas fa-edit"></i>
+      <% end %>
+    </td>
+    <td>
+      <%= link_to dream_list_path(dream_list), method: :delete, data: { confirm: '削除しますか？' } do %>
+        <i class="fas fa-eraser"></i>
+      <% end %>
+    </td>
+  </tr>
+<% end %>

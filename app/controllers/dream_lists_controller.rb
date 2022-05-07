@@ -27,6 +27,10 @@ class DreamListsController < ApplicationController
 
   def edit
     @dream_list = current_user.dream_lists.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def update
