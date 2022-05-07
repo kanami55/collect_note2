@@ -5,7 +5,9 @@
         <div class="ml-3 mt-3">
           <%= render "dream_lists/form", form: form %>
           <div class="mt-3 text-center">
-            <%= form.submit "更新" %>
+            <%= button_tag :type => "submit", :class =>"btn-sm btn-default" do %>
+              <i class="fas fa-caret-right"></i>Update
+            <% end %>
           </div>
         </div>
       <% end %>
