@@ -1,7 +1,12 @@
 <div class="container mt-4 mb-4">
   <div class="card mx-auto col-lg-6 shadow p-3 bg-white">
+    <div class="text-right">
+      <%= link_to plans_path do %>
+        <i class="fas fa-times fa-lg text-right text-body"></i>
+      <% end %>
+    </div>
     <h2>Schedule Change</h2>
-      <%= form_with model: @plan, method: :patch, local: true do |form| %>
+      <%= form_with model: plan, method: :patch, local: true do |form| %>
         <div class="ml-3 mt-3">
           <div class="form-group">
             <%= label :title, "スケジュール：", class: "form_label" %>
