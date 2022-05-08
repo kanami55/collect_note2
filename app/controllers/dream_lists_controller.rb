@@ -1,5 +1,5 @@
 class DreamListsController < ApplicationController
-  skip_before_action :login_required
+
   require 'date'
   def new
     @dream_list = DreamList.new
@@ -8,7 +8,6 @@ class DreamListsController < ApplicationController
   def create
     @dream_list = current_user.dream_lists.new(dream_list_params)
     if @dream_list.save
-        @dream_list.update(period: period_get)
       redirect_to dream_lists_path
       flash[:notice] = "１つ夢が追加されました。"
     else
@@ -26,10 +25,19 @@ class DreamListsController < ApplicationController
 
   def edit
     @dream_list = current_user.dream_lists.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def update
     @dream_list = current_user.dream_lists.find(params[:id])
+    @dream_list.period = Period.new(
+    params[:dream_list]["period(1i)"].to_i,
+    params[:dream_list]["period(2i)"].to_i,
+    params[:dream_list]["period(3i)"].to_i
+    )
     if @dream_list.update(dream_list_params)
       redirect_to dream_list_path(@dream_list.id)
       flash[:notice] = "更新に成功しました。"
@@ -54,9 +62,5 @@ class DreamListsController < ApplicationController
 
   def dream_list_params
     params.require(:dream_list).permit(:dream, :period, :detail, :image, :category)
-  end
-
-  def period_get
-    date = Date.new(params[:dream_list][:period])
   end
 end

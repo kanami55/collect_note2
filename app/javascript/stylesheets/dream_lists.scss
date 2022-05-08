@@ -17,3 +17,53 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+//モーダル
+#mask {
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+}
+
+#modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
+}
+
+#mask.hidden,
+#modal.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+//モーダル
+#back_mask {
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+}
+
+#new_modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
+}
+
+#back_mask.new_hidden,
+#new_modal.new_hidden {
+  opacity: 0;
+  visibility: hidden;
+}
