@@ -1,6 +1,5 @@
 class DreamListsController < ApplicationController
 
-  require 'date'
   def new
     @dream_list = DreamList.new
   end
@@ -25,21 +24,12 @@ class DreamListsController < ApplicationController
 
   def edit
     @dream_list = current_user.dream_lists.find(params[:id])
-    respond_to do |format|
-      format.html
-      format.js
-    end
   end
 
   def update
     @dream_list = current_user.dream_lists.find(params[:id])
-    @dream_list.period = Period.new(
-    params[:dream_list]["period(1i)"].to_i,
-    params[:dream_list]["period(2i)"].to_i,
-    params[:dream_list]["period(3i)"].to_i
-    )
     if @dream_list.update(dream_list_params)
-      redirect_to dream_list_path(@dream_list.id)
+      redirect_to dream_lists_path
       flash[:notice] = "更新に成功しました。"
     else
       render :edit
