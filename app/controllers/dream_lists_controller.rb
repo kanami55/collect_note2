@@ -45,7 +45,7 @@ class DreamListsController < ApplicationController
 
   def search_dream_list
     @dream_list = DreamList.new
-    @dream_lists = DreamList.search(params[:keyword])
+    @dream_lists = current_user.dream_lists.search(params[:keyword])
   end
 
   private
