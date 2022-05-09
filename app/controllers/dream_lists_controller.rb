@@ -1,5 +1,4 @@
 class DreamListsController < ApplicationController
-
   def new
     @dream_list = DreamList.new
   end

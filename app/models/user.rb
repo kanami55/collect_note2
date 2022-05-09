@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-  has_secure_password # password_confirmationカラムが作成される
-  
+  has_secure_password validations: true # password_confirmationカラムが作成される
+
   # 空でないこと
   validates :name, presence: true
   validates :email, presence: true, uniqueness: true # 一意性制約
