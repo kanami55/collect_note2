@@ -1,5 +1,5 @@
-var new_modal = document.getElementById('new_modal');
-var back_mask = document.getElementById('back_mask');
+let new_modal = document.getElementById('new_modal');
+let back_mask = document.getElementById('back_mask');
 new_modal.innerHTML = '<%= escape_javascript(render "dream_lists/new", dream_list: @dream_list) %>';
 new_modal.classList.remove('new_hidden');
 back_mask.classList.remove('new_hidden');
