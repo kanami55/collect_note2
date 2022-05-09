@@ -1,6 +1,6 @@
 <div class="text-danger">
   <% if dream_list.errors.any? %>
-    <%= dream_list.errors.count %>件のエラーが発生しました
+    <%= dream_list.count %>件のエラーが発生しました
       <ul>
         <% dream_list.errors.full_messages.each do |message| %>
           <li class="ml-3">
