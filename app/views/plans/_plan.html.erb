@@ -1,0 +1,17 @@
+<% plans.each do |plan| %>
+  <tr>
+    <td><%= plan.start_time.strftime("%Y-%m-%d %H:%M") %></td>
+    <td><%= plan.title %></td>
+    <td><%= plan.content %></td>
+    <td>
+      <%= link_to  edit_plan_path(plan), remote: true do %>
+        <i class="fas fa-edit"></i>
+      <% end %>
+    </td>
+    <td>
+      <%= link_to plan_path(plan), method: :delete, data: { confirm: '削除しますか？' } do %>
+        <i class="fas fa-trash-alt"></i>
+      <% end %>
+    </td>
+  </tr>
+<% end %>

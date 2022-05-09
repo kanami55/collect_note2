@@ -18,6 +18,10 @@ class PlansController < ApplicationController
 
   def edit
     @plan = current_user.plans.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def update
