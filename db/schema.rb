@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 2022_05_13_035437) do
   end
 
   create_table "not_to_do_lists", force: :cascade do |t|
+    t.integer "user_id"
     t.string "work"
     t.string "life"
     t.string "relationships"

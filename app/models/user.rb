@@ -8,4 +8,6 @@ class User < ApplicationRecord
   has_many :dream_lists, dependent: :destroy
   has_many :plans, dependent: :destroy
   has_many :users, dependent: :destroy
+  has_many :not_to_do_lists, dependent: :destroy
+
 end
