@@ -1,0 +1,21 @@
+<div class="container">
+  <h2>Not To Do List</h2>
+<table class="table text-white text-center">
+  <thead>
+    <tr>
+      <th>仕事</th>
+      <th>生活</th>
+      <th>人間関係</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @not_to_do_lists.each do |not_to_do_list| %>
+    <tr>
+      <td class="text-white"><%= not_to_do_list.work %></td>
+      <td><%= not_to_do_list.life %></td>
+      <td><%= not_to_do_list.relationships %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
