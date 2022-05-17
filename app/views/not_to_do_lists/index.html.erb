@@ -1,5 +1,8 @@
 <div class="container">
-  <h2>Not To Do List</h2>
+  <div class="text-right">
+    <%= link_to "+ New", new_not_to_do_list_path, class: "btn btn-sm btn-secondary"%>
+  </div>
+  <h2 class="text-white">Not To Do List</h2>
 <table class="table text-white text-center">
   <thead>
     <tr>
@@ -11,9 +14,24 @@
   <tbody>
     <% @not_to_do_lists.each do |not_to_do_list| %>
     <tr>
-      <td class="text-white"><%= not_to_do_list.work %></td>
-      <td><%= not_to_do_list.life %></td>
-      <td><%= not_to_do_list.relationships %></td>
+      <td class="text-white">
+        <%= not_to_do_list.work %>
+        <%= link_to edit_not_to_do_list_path(not_to_do_list) do %>
+          <i class="fas fa-edit"></i>
+        <% end %>
+      </td>
+      <td class="text-white">
+        <%= not_to_do_list.life %>
+        <%= link_to edit_not_to_do_list_path(not_to_do_list) do %>
+          <i class="fas fa-edit"></i>
+        <% end %>
+      </td>
+      <td class="text-white">
+        <%= not_to_do_list.relationships %>
+        <%= link_to edit_not_to_do_list_path(not_to_do_list) do %>
+          <i class="fas fa-edit"></i>
+        <% end %>
+      </td>
     </tr>
     <% end %>
   </tbody>
