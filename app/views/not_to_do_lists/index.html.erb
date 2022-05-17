@@ -14,9 +14,24 @@
   <tbody>
     <% @not_to_do_lists.each do |not_to_do_list| %>
     <tr>
-      <td class="text-white"><%= not_to_do_list.work %></td>
-      <td><%= not_to_do_list.life %></td>
-      <td><%= not_to_do_list.relationships %></td>
+      <td class="text-white">
+        <%= not_to_do_list.work %>
+        <%= link_to edit_not_to_do_list_path(not_to_do_list), remote: true do %>
+          <i class="fas fa-edit"></i>
+        <% end %>
+      </td>
+      <td class="text-white">
+        <%= not_to_do_list.life %>
+        <%= link_to edit_not_to_do_list_path(not_to_do_list), remote: true do %>
+          <i class="fas fa-edit"></i>
+        <% end %>
+      </td>
+      <td class="text-white">
+        <%= not_to_do_list.relationships %>
+        <%= link_to edit_not_to_do_list_path(not_to_do_list), remote: true do %>
+          <i class="fas fa-edit"></i>
+        <% end %>
+      </td>
     </tr>
     <% end %>
   </tbody>
