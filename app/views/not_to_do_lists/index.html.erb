@@ -35,12 +35,20 @@
   </tbody>
 </table>
 
-    <!--モーダル実装（編集画面）-->
+    <!--モーダル実装（新規画面）-->
     <!--バック黒い部分-->
     <div id="not_to_do_list_bask" class="not_to_do_list_hidden"></div>
     <!--モーダル部分-->
     <div class="not_to_do_list_modal">
       <%= render "not_to_do_lists/new", not_to_do_list: @not_to_do_list %>
     </div>
+    <!--モーダル実装（編集画面）-->
+    <!--バック黒い部分-->
+    <div id="not_to_do_list_bask" class="not_to_do_list_hidden"></div>
+    <!--モーダル部分-->
+    <div class="not_to_do_list_modal">
+      <%= render "not_to_do_lists/edit", not_to_do_list: @not_to_do_list %>
+    </div>
+    
 </div>
 
