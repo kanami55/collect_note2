@@ -1,9 +1,9 @@
-let not_to_do_list_modal = document.getElementById('not_to_do_list_modal');
+let not_to_do_list_modal = document.getElementById('not_to_do_list_modal_edit');
 let not_to_do_list_bask = document.getElementById('not_to_do_list_bask');
 not_to_do_list_modal.innerHTML = '<%= escape_javascript(render "not_to_do_lists/edit", not_to_do_list: @not_to_do_list %>';
-not_to_do_list_modal.classList.remove('not_to_do_list_hidden');
-not_to_do_list_bask.classList.remove('not_to_do_list_hidden');
+not_to_do_list_modal.classList.remove('not_to_do_list_hidden_edit');
+not_to_do_list_bask.classList.remove('not_to_do_list_hidden_edit');
 not_to_do_list_bask.addEventListener('click', () => {
-  not_to_do_list_modal.classList.add('not_to_do_list_hidden');
-  not_to_do_list_bask.classList.add('not_to_do_list_hidden');
+  not_to_do_list_modal.classList.add('not_to_do_list_hidden_edit');
+  not_to_do_list_bask.classList.add('not_to_do_list_hidden_edit');
 });
