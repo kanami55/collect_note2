@@ -23,7 +23,7 @@ class NotToDoListsController < ApplicationController
   def update
     @not_to_do_list = current_user.not_to_do_lists.find(params[:id])
     if @not_to_do_list.update
-      redirect_to  not_to_do_lists_path
+      redirect_to not_to_do_lists_path
     else
       render :edit
     end

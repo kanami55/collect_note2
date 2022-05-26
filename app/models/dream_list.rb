@@ -17,4 +17,9 @@ class DreamList < ApplicationRecord
   def self.search(search_word)
     DreamList.where(['category LIKE ?', "#{search_word}"]) # 完全一致のカテゴリー
   end
+
+  def self.search(search)
+    return DreamList.all unless search
+    DreamList.where(['dream LIKE ?', "%#{search}%"])
+  end
 end
