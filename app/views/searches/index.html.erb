@@ -1,0 +1,53 @@
+<div class="container">
+  <%= render "not_to_do_lists/new_button" %>
+  <h2 class="text-white">Not To Do List</h2>
+<table class="table text-white text-center">
+  <thead>
+    <tr>
+      <th>仕事</th>
+      <th>生活</th>
+      <th>人間関係</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @not_to_do_lists.each do |not_to_do_list| %>
+    <tr>
+      <td class="text-white">
+        <%= not_to_do_list.work %>
+        <%= link_to edit_not_to_do_list_path(not_to_do_list) do %>
+          <i class="fas fa-edit"></i>
+        <% end %>
+      </td>
+      <td class="text-white">
+        <%= not_to_do_list.life %>
+        <%= link_to edit_not_to_do_list_path(not_to_do_list) do %>
+          <i class="fas fa-edit"></i>
+        <% end %>
+      </td>
+      <td class="text-white">
+        <%= not_to_do_list.relationships %>
+        <%= link_to edit_not_to_do_list_path(not_to_do_list) do %>
+          <i class="fas fa-edit"></i>
+        <% end %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+    <!--モーダル実装（新規画面）-->
+    <!--バック黒い部分-->
+    <div id="not_to_do_list_bask" class="not_to_do_list_hidden"></div>
+    <!--モーダル部分-->
+    <div class="not_to_do_list_modal">
+      <%= render "not_to_do_lists/new", not_to_do_list: @not_to_do_list %>
+    </div>
+    <!--モーダル実装（編集画面）-->
+    <!--バック黒い部分-->
+    <div id="not_to_do_list_bask_edit" class="not_to_do_list_hidden_edit"></div>
+    <!--モーダル部分-->
+    <div class="not_to_do_list_modal_edit">
+      <%= render "not_to_do_lists/edit", not_to_do_list: @not_to_do_list %>
+    </div>
+
+</div>
