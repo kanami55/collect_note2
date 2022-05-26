@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   resources :dream_lists
   resources :plans
   resources :not_to_do_lists
+  resources :searches, only:[:index]
   get '/search_dream_list' => 'dream_lists#search_dream_list' # カテゴリー検索
 end
