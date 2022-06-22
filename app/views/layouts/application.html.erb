@@ -5,6 +5,8 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+
+　　<%= stylesheet_pack_tag 'hello_vue'  %>
     <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -15,6 +17,10 @@
       <header>
         <%= render "layouts/header" %>
       </header>
+
+          <div id="hello">
+           <p>{{ message }}</p>
+          </div>
 
       <!--main-->
       <main class="mx-auto ">
