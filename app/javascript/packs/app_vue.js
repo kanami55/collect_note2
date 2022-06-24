@@ -41,11 +41,21 @@
 
  document.addEventListener('DOMContentLoaded', () => {
     const app = new Vue({
-     el: '#hello',
+     el: '#vue_app',
      data: {
-       message: "Can you say hello?"
+      showContent: false,
+      message: "aaaaaaaa"
      },
-     components: { App }
+     methods: {
+      openModal() {
+       this.showContent = true
+      },
+      closeModal() {
+       this.showContent = false
+      }
+
+     }
+     // components: { App }
    });
  });
 

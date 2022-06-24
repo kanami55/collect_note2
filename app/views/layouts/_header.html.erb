@@ -25,7 +25,7 @@
             <li class="nav-item">
               <%= link_to "Logout", logout_path, method: :delete, class: "nav-link text-white" %>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" v-on:click="openModal">
               <%= link_to "+ Dream", new_dream_list_path, remote: true, class: "nav-link text-warning font-weight-bold" %>
             </li>
           <% else %>
