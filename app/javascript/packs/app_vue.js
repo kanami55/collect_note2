@@ -43,15 +43,21 @@
     const app = new Vue({
      el: '#vue_app',
      data: {
-      showContent: false,
-      message: "aaaaaaaa"
+      NewshowContent: false,
+      EditshowContent: false
      },
      methods: {
       openModal() {
-       this.showContent = true
+       this.NewshowContent = true
       },
       closeModal() {
-       this.showContent = false
+       this.NewshowContent = false
+      },
+      EditopenModal() {
+       this.EditshowContent = true
+      },
+      EditcloseModal() {
+       this.EditshowContent = false
       }
 
      }
