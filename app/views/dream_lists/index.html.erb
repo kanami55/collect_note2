@@ -17,17 +17,17 @@
 
     <!--モーダル実装(編集画面)-->
     <!--バック黒い部分-->
-    <div id="mask" class="hidden"></div>
+    <!--<div id="mask" class="hidden"></div>-->
     <!--モーダル部分-->
-    <div id="modal" class="hidden">
+    <div id="modal" v-show="EditshowContent" @click="EditcloseModal">
       <%= render "dream_lists/edit", dream_list: @dream_list %>
     </div>
 
     <!--モーダル実装(新規投稿)-->
     <!--バック黒い部分-->
-    <div id="back_mask" class="new_hidden"></div>
+    <!--<div id="back_mask" class="new_hidden"></div>-->
     <!--モーダル部分-->
-    <div id="new_modal" class="new_hidden">
+    <div id="new_modal" v-show="NewshowContent" @click="closeModal">
       <%= render "dream_lists/new", dream_list: @dream_list %>
     </div>
 </div>

@@ -50,6 +50,6 @@ class DreamListsController < ApplicationController
   private
 
   def dream_list_params
-    params.require(:dream_list).permit(:dream, :period, :detail, :image, :category)
+    params.permit(:dream, :period, :detail, :image, :category)
   end
 end
